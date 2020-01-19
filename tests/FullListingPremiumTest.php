@@ -30,4 +30,9 @@ class FullListingPremiumTest extends TestCase
     {
         $this->assertEquals('My new website posting', $this->listing->getDescription());
     }
+
+    public function testDisplayAllowedTags()
+    {
+        $this->assertSame(htmlspecialchars('<p><br><b><strong><em><u><ol><ul><li>'), $this->listing->displayAllowedTags());
+    }
 }

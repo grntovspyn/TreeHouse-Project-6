@@ -12,10 +12,12 @@ class FullListingBasicTest extends TestCase
         $data = [
             'id' => 1,
             'title' => 'New Posting',
-            'website' => 'http://www.website.com',
+            'website' => 'www.website.com',
             'email' => 'user@email.com',
             'twitter' => '@newuser',
+            'status' => 'basic',
             'image' => 'path_to_image/image.jpg',
+            
         ];
 
         $this->listing = new ListingBasic($data);
@@ -49,13 +51,31 @@ class FullListingBasicTest extends TestCase
         $this->assertEquals($this->listing->getWebsite(),'http://www.website.com');
         $this->assertEquals($this->listing->getEmail(),'user@email.com');
         $this->assertEquals($this->listing->getTwitter(),'newuser');
-       
+    
     }
 
     public function testMethodConvertingItemsToArray()
     {
         $this->assertIsArray($this->listing->toArray());
     }
+
+    public function testNoWebsite()
+    {
+        $this->assertNull($this->listing->setWebsite(''));
+    }
+
+    public function testNoHttpWebsite()
+    {
+        $this->assertNull($this->listing->setWebsite('www.website.com'));
+    }
+
+    public function testEmptyStatus()
+    {
+    
+        $this->assertNull( $this->listing->setStatus(""));
+    }
+
+   
 
 
 

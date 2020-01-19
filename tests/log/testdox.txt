@@ -5,6 +5,9 @@ FullListingBasic
  [x] Get title
  [x] Get methods are returning expected results
  [x] Method converting items to array
+ [x] No website
+ [x] No http website
+ [x] Empty status
 
 FullListingFeatured
  [x] Get status
@@ -13,6 +16,7 @@ FullListingFeatured
 FullListingPremium
  [x] Get status
  [x] Get website description
+ [x] Display allowed tags
 
 ListingBasic
  [x] Exception
@@ -20,10 +24,7 @@ ListingBasic
  [x] Must be created with valid title
 
 ListingImage
- [ ] No image
- [ ] Full path image
- [ ] Build path image
-
-ListingPremium
- [x] To see if assert true
+ [x] No image
+ [x] Full path image
+ [x] Build path image
 

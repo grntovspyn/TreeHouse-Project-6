@@ -109,6 +109,7 @@ class ListingBasic
         $this->website = $value;
     }
 
+
     /**
      * Gets the local property $email
      * @return string email address
@@ -176,13 +177,38 @@ class ListingBasic
         return get_object_vars($this);
     }
 
-    public function setImage()
+    /**
+     * Cleans up and sets the local property $image
+     * @param string $value to set property
+     */
+    public function setImage($value)
     {
-        return $this->image;
+        $value = trim(filter_var($value, FILTER_SANITIZE_STRING));
+        if (empty($value)) {
+            $this->image = null;
+            return;
+        }
+        if(substr($value, 0, 6) == 'images'){
+            $value = '//' . $value;
+            $this->image = $value;
+            return;
+        }
+    
+        if (substr($value, 0, 4) != 'http') {
+            $value = 'http://' . $value;
+            $this->image = $value;
+            return;
+        }
+        $this->image = $value;
+       
     }
 
     public function getImage()
-    {
-        return $this->image;
+    {   
+        if(empty($this->image)){
+            return false;
+        } else {
+            return $this->image;
+        }
     }
 }
