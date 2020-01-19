@@ -1,0 +1,29 @@
+FullListingBasic
+ [x] Ensure object is created when passing min data
+ [x] Ensure get status method works
+ [x] Get id
+ [x] Get title
+ [x] Get methods are returning expected results
+ [x] Method converting items to array
+
+FullListingFeatured
+ [x] Get status
+ [x] Get coc
+
+FullListingPremium
+ [x] Get status
+ [x] Get website description
+
+ListingBasic
+ [x] Exception
+ [x] Must be created with valid id
+ [x] Must be created with valid title
+
+ListingImage
+ [ ] No image
+ [ ] Full path image
+ [ ] Build path image
+
+ListingPremium
+ [x] To see if assert true
+
